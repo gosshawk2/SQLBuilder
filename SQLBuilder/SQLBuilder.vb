@@ -59,8 +59,8 @@
             dgvCheckSum.Name = "SUM"
 
             dgvFieldSelection.DataSource = Nothing
-            'dt = myDAL.GetColumnsMYSQL(DataSetID)
-            dt = myDAL.GetColumns(GlobalSession.ConnectString, DataSetID)
+            dt = myDAL.GetColumnsMYSQL(DataSetID)
+            'dt = myDAL.GetColumns(GlobalSession.ConnectString, DataSetID)
             If dt IsNot Nothing Then
                 If dt.Rows.Count > 0 Then
                     dgvFieldSelection.DataSource = dt
@@ -405,7 +405,7 @@
         Cursor = Cursors.Default
     End Sub
 
-    Private Sub SQLQueryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SQLQueryToolStripMenuItem.Click
+    Private Sub SQLQueryToolStripMenuItem_Click(sender As Object, e As EventArgs)
         ShowQueryForm()
 
     End Sub

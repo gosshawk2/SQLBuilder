@@ -41,9 +41,6 @@ Partial Class SQLBuilder
         Me.btnMoveOrderByFieldsUp = New System.Windows.Forms.Button()
         Me.chklstOrderBY = New System.Windows.Forms.CheckedListBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SQLQueryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnAddWhereFields = New System.Windows.Forms.Button()
         Me.lstWhereFields = New System.Windows.Forms.ListBox()
         Me.btnAddWhere = New System.Windows.Forms.Button()
@@ -57,15 +54,17 @@ Partial Class SQLBuilder
         Me.btnRemoveSelectedWHEREFields = New System.Windows.Forms.Button()
         Me.btnRemoveSelectedGroupByFields = New System.Windows.Forms.Button()
         Me.btnRemoveOrderByFields = New System.Windows.Forms.Button()
+        Me.cbUnique = New System.Windows.Forms.CheckBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.cboDatabases = New System.Windows.Forms.ComboBox()
         CType(Me.dgvFieldSelection, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.stsQueryBuilder.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(204, 49)
+        Me.Label3.Location = New System.Drawing.Point(204, 65)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(63, 13)
         Me.Label3.TabIndex = 13
@@ -73,7 +72,7 @@ Partial Class SQLBuilder
         '
         'txtTablename
         '
-        Me.txtTablename.Location = New System.Drawing.Point(269, 46)
+        Me.txtTablename.Location = New System.Drawing.Point(269, 62)
         Me.txtTablename.Name = "txtTablename"
         Me.txtTablename.Size = New System.Drawing.Size(100, 20)
         Me.txtTablename.TabIndex = 12
@@ -93,7 +92,7 @@ Partial Class SQLBuilder
         '
         'btnRefresh
         '
-        Me.btnRefresh.Location = New System.Drawing.Point(398, 46)
+        Me.btnRefresh.Location = New System.Drawing.Point(398, 62)
         Me.btnRefresh.Name = "btnRefresh"
         Me.btnRefresh.Size = New System.Drawing.Size(80, 23)
         Me.btnRefresh.TabIndex = 14
@@ -103,7 +102,7 @@ Partial Class SQLBuilder
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(11, 49)
+        Me.Label1.Location = New System.Drawing.Point(11, 65)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(78, 13)
         Me.Label1.TabIndex = 16
@@ -111,7 +110,7 @@ Partial Class SQLBuilder
         '
         'txtDatasetName
         '
-        Me.txtDatasetName.Location = New System.Drawing.Point(89, 46)
+        Me.txtDatasetName.Location = New System.Drawing.Point(89, 62)
         Me.txtDatasetName.Name = "txtDatasetName"
         Me.txtDatasetName.Size = New System.Drawing.Size(100, 20)
         Me.txtDatasetName.TabIndex = 15
@@ -177,7 +176,7 @@ Partial Class SQLBuilder
         '
         Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(615, 75)
+        Me.Label2.Location = New System.Drawing.Point(609, 68)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(252, 13)
         Me.Label2.TabIndex = 22
@@ -185,7 +184,7 @@ Partial Class SQLBuilder
         '
         'btnSelectAll
         '
-        Me.btnSelectAll.Location = New System.Drawing.Point(506, 46)
+        Me.btnSelectAll.Location = New System.Drawing.Point(506, 62)
         Me.btnSelectAll.Name = "btnSelectAll"
         Me.btnSelectAll.Size = New System.Drawing.Size(80, 23)
         Me.btnSelectAll.TabIndex = 23
@@ -244,28 +243,6 @@ Partial Class SQLBuilder
         Me.Label5.Size = New System.Drawing.Size(222, 13)
         Me.Label5.TabIndex = 29
         Me.Label5.Text = "Tick item in list to indicate reversed sort order:"
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1030, 24)
-        Me.MenuStrip1.TabIndex = 30
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'ViewToolStripMenuItem
-        '
-        Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SQLQueryToolStripMenuItem})
-        Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(79, 20)
-        Me.ViewToolStripMenuItem.Text = "View Query"
-        '
-        'SQLQueryToolStripMenuItem
-        '
-        Me.SQLQueryToolStripMenuItem.Name = "SQLQueryToolStripMenuItem"
-        Me.SQLQueryToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
-        Me.SQLQueryToolStripMenuItem.Text = "SQL Query"
         '
         'btnAddWhereFields
         '
@@ -353,7 +330,7 @@ Partial Class SQLBuilder
         'btnShowQuery
         '
         Me.btnShowQuery.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnShowQuery.Location = New System.Drawing.Point(608, 46)
+        Me.btnShowQuery.Location = New System.Drawing.Point(608, 28)
         Me.btnShowQuery.MinimumSize = New System.Drawing.Size(140, 0)
         Me.btnShowQuery.Name = "btnShowQuery"
         Me.btnShowQuery.Size = New System.Drawing.Size(140, 23)
@@ -405,11 +382,41 @@ Partial Class SQLBuilder
         Me.btnRemoveOrderByFields.Text = "<- Remove "
         Me.btnRemoveOrderByFields.UseVisualStyleBackColor = True
         '
+        'cbUnique
+        '
+        Me.cbUnique.AutoSize = True
+        Me.cbUnique.Location = New System.Drawing.Point(760, 32)
+        Me.cbUnique.Name = "cbUnique"
+        Me.cbUnique.Size = New System.Drawing.Size(103, 17)
+        Me.cbUnique.TabIndex = 44
+        Me.cbUnique.Text = "Unique Records"
+        Me.cbUnique.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(31, 27)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(56, 13)
+        Me.Label4.TabIndex = 46
+        Me.Label4.Text = "Database:"
+        '
+        'cboDatabases
+        '
+        Me.cboDatabases.FormattingEnabled = True
+        Me.cboDatabases.Location = New System.Drawing.Point(89, 24)
+        Me.cboDatabases.Name = "cboDatabases"
+        Me.cboDatabases.Size = New System.Drawing.Size(280, 21)
+        Me.cboDatabases.TabIndex = 47
+        '
         'SQLBuilder
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1030, 702)
+        Me.Controls.Add(Me.cboDatabases)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.cbUnique)
         Me.Controls.Add(Me.btnRemoveOrderByFields)
         Me.Controls.Add(Me.btnRemoveSelectedGroupByFields)
         Me.Controls.Add(Me.btnRemoveSelectedWHEREFields)
@@ -431,7 +438,6 @@ Partial Class SQLBuilder
         Me.Controls.Add(Me.btnSelectAll)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.stsQueryBuilder)
-        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.btnSelectFields)
         Me.Controls.Add(Me.btnMoveSelectFieldsDOWN)
         Me.Controls.Add(Me.btnMoveSelectFieldsUP)
@@ -442,15 +448,12 @@ Partial Class SQLBuilder
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtTablename)
         Me.Controls.Add(Me.dgvFieldSelection)
-        Me.MainMenuStrip = Me.MenuStrip1
         Me.MinimumSize = New System.Drawing.Size(580, 515)
         Me.Name = "SQLBuilder"
         Me.Text = "SQL Builder"
         CType(Me.dgvFieldSelection, System.ComponentModel.ISupportInitialize).EndInit()
         Me.stsQueryBuilder.ResumeLayout(False)
         Me.stsQueryBuilder.PerformLayout()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -474,9 +477,6 @@ Partial Class SQLBuilder
     Friend WithEvents btnMoveOrderByFieldsUp As Button
     Friend WithEvents chklstOrderBY As CheckedListBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SQLQueryToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents btnAddWhereFields As Button
     Friend WithEvents lstWhereFields As ListBox
     Friend WithEvents btnAddWhere As Button
@@ -490,4 +490,7 @@ Partial Class SQLBuilder
     Friend WithEvents btnRemoveSelectedWHEREFields As Button
     Friend WithEvents btnRemoveSelectedGroupByFields As Button
     Friend WithEvents btnRemoveOrderByFields As Button
+    Friend WithEvents cbUnique As CheckBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents cboDatabases As ComboBox
 End Class
