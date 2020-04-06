@@ -19,6 +19,8 @@
         'Populate Field List from previous form:
         'lbSelectedWHEREFields.Items.AddRange(FieldList)
         lbSelectedWHEREFields.Items.AddRange(FieldList)
+        lblMessage.Text = ""
+        lblMessage.Visible = False
     End Sub
 
     Function IsInList(lstBox As ListBox, CheckItem As String) As Boolean
@@ -76,7 +78,7 @@
                 strValue = txtValue.Text
                 If UCase(strOperator) = "LIKE" Then
                     'Test if any wildcard used ??
-                    strValue = "Like " & "'" & strValue & "'"
+                    'strValue = "Like " & "'" & strValue & "'"
                     'Need to wrap chars around the value: if user wants wildcards then will have to insert themselves.
                 End If
                 'Check if any other conditions exist:
@@ -161,6 +163,12 @@
             ItemName = cboOperators.Items(IDX)
             If ItemName <> "" Then
                 txtOperator.Text = ItemName
+            End If
+            lblMessage.Text = ""
+            lblMessage.Visible = False
+            If ItemName = "LIKE" Then
+                lblMessage.Text = "use % for wildcard and _ for single character search"
+                lblMessage.Visible = True
             End If
         End If
 

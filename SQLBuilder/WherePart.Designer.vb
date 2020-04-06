@@ -39,6 +39,7 @@ Partial Class WherePart
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnAddWhere = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
+        Me.lblMessage = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -146,7 +147,7 @@ Partial Class WherePart
         'cboOperators
         '
         Me.cboOperators.FormattingEnabled = True
-        Me.cboOperators.Items.AddRange(New Object() {"=", ">", "<", "<>", ">=", "<=", "*", "+", "-", "!", "!=", "BETWEEN"})
+        Me.cboOperators.Items.AddRange(New Object() {"=", ">", "<", "<>", ">=", "<=", "*", "+", "-", "!", "!=", "LIKE", "BETWEEN"})
         Me.cboOperators.Location = New System.Drawing.Point(234, 52)
         Me.cboOperators.Name = "cboOperators"
         Me.cboOperators.Size = New System.Drawing.Size(114, 21)
@@ -165,7 +166,7 @@ Partial Class WherePart
         Me.cbIncludeSingleQuote.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.cbIncludeSingleQuote.Checked = True
         Me.cbIncludeSingleQuote.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cbIncludeSingleQuote.Location = New System.Drawing.Point(447, 59)
+        Me.cbIncludeSingleQuote.Location = New System.Drawing.Point(389, 59)
         Me.cbIncludeSingleQuote.Name = "cbIncludeSingleQuote"
         Me.cbIncludeSingleQuote.Size = New System.Drawing.Size(128, 17)
         Me.cbIncludeSingleQuote.TabIndex = 54
@@ -199,11 +200,20 @@ Partial Class WherePart
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
+        'lblMessage
+        '
+        Me.lblMessage.AutoSize = True
+        Me.lblMessage.Location = New System.Drawing.Point(566, 61)
+        Me.lblMessage.Name = "lblMessage"
+        Me.lblMessage.Size = New System.Drawing.Size(0, 13)
+        Me.lblMessage.TabIndex = 58
+        '
         'WherePart
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(925, 313)
+        Me.Controls.Add(Me.lblMessage)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnAddWhere)
         Me.Controls.Add(Me.Label1)
@@ -245,4 +255,5 @@ Partial Class WherePart
     Friend WithEvents Label1 As Label
     Friend WithEvents btnAddWhere As Button
     Friend WithEvents btnCancel As Button
+    Friend WithEvents lblMessage As Label
 End Class
