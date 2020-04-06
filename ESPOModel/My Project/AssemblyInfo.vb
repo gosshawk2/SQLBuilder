@@ -10,10 +10,10 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("ESPO Test")>
 <Assembly: AssemblyDescription("ESPO Test Application")>
-<Assembly: AssemblyCompany("Eastern Shires Purchasing Organisation")> 
-<Assembly: AssemblyProduct("ESPO CRM")> 
-<Assembly: AssemblyCopyright("Copyright © Eastern Shires Purchasing Organisation (ESPO) 2015")> 
-<Assembly: AssemblyTrademark("")> 
+<Assembly: AssemblyCompany("Eastern Shires Purchasing Organisation")>
+<Assembly: AssemblyProduct("ESPO CRM")>
+<Assembly: AssemblyCopyright("Copyright © Eastern Shires Purchasing Organisation (ESPO) 2015")>
+<Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.1.1")>
-<Assembly: AssemblyFileVersion("1.0.1.1")>
+<Assembly: AssemblyVersion("1.0.0.9")>
+<Assembly: AssemblyFileVersion("1.0.0.9")>
