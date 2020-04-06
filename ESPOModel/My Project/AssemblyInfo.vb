@@ -10,10 +10,10 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("ESPO Test")>
 <Assembly: AssemblyDescription("ESPO Test Application")>
-<Assembly: AssemblyCompany("Eastern Shires Purchasing Organisation")> 
-<Assembly: AssemblyProduct("ESPO CRM")> 
-<Assembly: AssemblyCopyright("Copyright © Eastern Shires Purchasing Organisation (ESPO) 2015")> 
-<Assembly: AssemblyTrademark("")> 
+<Assembly: AssemblyCompany("Eastern Shires Purchasing Organisation")>
+<Assembly: AssemblyProduct("ESPO CRM")>
+<Assembly: AssemblyCopyright("Copyright © Eastern Shires Purchasing Organisation (ESPO) 2015")>
+<Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
